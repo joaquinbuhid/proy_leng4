@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { profile } from '../data/profile';
+import { profile } from '../profile';
 
 export default function Layout() {
   const { pathname } = useLocation();

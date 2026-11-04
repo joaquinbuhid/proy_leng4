@@ -40,4 +40,4 @@ El puerto lo asigna Hostinger con la variable de entorno `PORT`; `server.js` ya 
 | `#/contacto` | Formulario de contacto |
 
 ## Estado
-El formulario de contacto valida los datos pero todavía no los envía a ningún servidor. Los datos del equipo se editan en `src/data/profile.js`.
+El formulario de contacto valida los datos pero todavía no los envía a ningún servidor. Los datos del equipo se editan en `src/profile.js`.

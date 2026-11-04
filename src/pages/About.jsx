@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { profile } from '../data/profile';
-
-const tecnologias = ['React', 'JavaScript', 'Node.js', 'Express', 'MySQL', 'Git'];
+import { profile } from '../profile';
 
 export default function About() {
   return (
@@ -12,8 +10,8 @@ export default function About() {
 
       <h2 className="h5 mt-5 mb-3">Tecnologías</h2>
       <div className="d-flex flex-wrap gap-2">
-        {tecnologias.map((t) => (
-          <span key={t} className="badge text-bg-light border fw-normal">{t}</span>
+        {profile.technologies.map((t) => (
+          <span key={t.name} className="badge text-bg-light border fw-normal">{t.name}</span>
         ))}
       </div>
 

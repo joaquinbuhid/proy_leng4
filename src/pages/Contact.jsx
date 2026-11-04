@@ -1,5 +1,5 @@
 import ContactForm from '../components/ContactForm';
-import { profile } from '../data/profile';
+import { profile } from '../profile';
 
 export default function Contact() {
   return (

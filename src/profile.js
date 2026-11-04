@@ -2,11 +2,23 @@
 export const profile = {
   brand: 'Jb_',
   role: 'Desarrollo Fullstack',
-  location: 'San Miguel de Tucumán, Argentina',
+  location: 'Salta, Argentina',
   email: 'contacto@portfolio.dev',
   tagline: 'Construimos aplicaciones web de punta a punta: interfaces cuidadas, APIs robustas y bases de datos bien diseñadas.',
   about:
     'Somos un equipo de desarrollo fullstack con foco en productos web escalables. Nos gusta transformar ideas en soluciones concretas, desde el diseño de la interfaz hasta el despliegue en la nube, cuidando la experiencia de usuario, el rendimiento y la calidad del código.',
+  // Logos en public/logos. Se muestran en el carrusel de la página de inicio.
+  technologies: [
+    { name: 'QGIS', logo: 'qgis.svg' },
+    { name: 'Python', logo: 'python.svg' },
+    { name: 'PostgreSQL', logo: 'postgresql.svg' },
+    { name: 'React', logo: 'react.svg' },
+    { name: 'JavaScript', logo: 'javascript.svg' },
+    { name: 'Node.js', logo: 'nodejs.svg' },
+    { name: 'MySQL', logo: 'mysql.svg' },
+    { name: 'Git', logo: 'git.svg' },
+    { name: 'Docker', logo: 'docker.svg' },
+  ],
   experience: [
     {
       period: '2025 — Actualidad',
