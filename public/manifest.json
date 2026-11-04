@@ -1,1 +1,1 @@
-{ "short_name": "Portfolio", "name": "Portfolio Desarrollador Fullstack", "icons": [{ "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" }], "start_url": ".", "display": "standalone", "theme_color": "#0B0F19", "background_color": "#0B0F19" }
+{ "short_name": "Portfolio", "name": "Portfolio Desarrollador Fullstack", "icons": [], "start_url": ".", "display": "standalone", "theme_color": "#ffffff", "background_color": "#ffffff" }

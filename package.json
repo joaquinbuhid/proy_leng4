@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "homepage": ".",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -26,8 +31,10 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "express": "^4.22.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6",
     "react-scripts": "^5.0.1"
   }
 }
