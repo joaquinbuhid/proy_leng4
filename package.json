@@ -5,10 +5,10 @@
   "homepage": ".",
   "main": "server.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.12"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "concurrently -k -n api,web -c blue,green \"node --watch server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "start": "node server.js"
   },
@@ -32,9 +32,14 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "express": "^4.22.3",
+    "nodemailer": "^10.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.6",
     "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "http-proxy-middleware": "^2.0.11"
   }
 }

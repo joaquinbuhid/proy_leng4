@@ -19,6 +19,24 @@ export const profile = {
     { name: 'Git', logo: 'git.svg' },
     { name: 'Docker', logo: 'docker.svg' },
   ],
+  services: [
+    {
+      title: 'Desarrollo web a medida',
+      description: 'Aplicaciones web completas, desde el diseño de la interfaz hasta la puesta en producción.',
+    },
+    {
+      title: 'APIs y bases de datos',
+      description: 'Diseño de APIs REST, modelado de datos e integración con otros sistemas.',
+    },
+    {
+      title: 'Mapas y datos geográficos',
+      description: 'Procesamiento y visualización de información geográfica con QGIS, Python y PostgreSQL.',
+    },
+    {
+      title: 'Asesoría técnica',
+      description: 'Revisión de arquitectura y código, y ayuda para elegir tecnologías.',
+    },
+  ],
   experience: [
     {
       period: '2025 — Actualidad',
