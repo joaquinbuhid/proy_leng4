@@ -1,65 +1,52 @@
-import { useEffect, useRef } from 'react';
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import ScrollProgress from './components/ScrollProgress';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import StyleGuide from './pages/StyleGuide';
-import NotFound from './pages/NotFound';
-import AdminLayout from './pages/admin/AdminLayout';
-import Dashboard from './pages/admin/Dashboard';
-import Messages from './pages/admin/Messages';
-import Content from './pages/admin/Content';
-import Users from './pages/admin/Users';
-import Metrics from './pages/admin/Metrics';
+import { profile } from './data/profile';
 
-function PublicLayout({ children }) {
-  const { pathname } = useLocation();
-  const ref = useRef(null);
-  // Transición de página + scroll arriba al cambiar de ruta.
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    gsap.fromTo(ref.current, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out', onComplete: () => ScrollTrigger.refresh() });
-  }, [pathname]);
-  return (
-    <div className="d-flex flex-column min-vh-100">
-      <ScrollProgress />
-      <Navbar />
-      <div ref={ref} className="flex-grow-1">{children}</div>
-      <Footer />
-    </div>
-  );
-}
-
-const pub = (el) => <PublicLayout>{el}</PublicLayout>;
+const tecnologias = ['React', 'JavaScript', 'Node.js', 'Express', 'MySQL', 'Git'];
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={pub(<Home />)} />
-        <Route path="/contacto" element={pub(<Contact />)} />
-        <Route path="/proyectos" element={pub(<Projects />)} />
-        <Route path="/proyectos/:id" element={pub(<ProjectDetail />)} />
-        <Route path="/login" element={pub(<Login />)} />
-        <Route path="/registro" element={pub(<Register />)} />
-        <Route path="/estilo" element={pub(<StyleGuide />)} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="consultas" element={<Messages />} />
-          <Route path="contenido" element={<Content />} />
-          <Route path="usuarios" element={<Users />} />
-          <Route path="metricas" element={<Metrics />} />
-        </Route>
-        <Route path="*" element={pub(<NotFound />)} />
-      </Routes>
-    </HashRouter>
+    <>
+      <nav className="navbar border-bottom bg-white">
+        <div className="container">
+          <span className="navbar-brand fw-semibold">{profile.name}</span>
+          <div className="d-flex gap-3">
+            <a className="nav-link" href="#sobre-mi">Sobre mí</a>
+            <a className="nav-link" href="#contacto">Contacto</a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="container">
+        <section className="py-5 my-md-4">
+          <p className="text-secondary mb-2">{profile.role}</p>
+          <h1 className="display-5 fw-bold mb-3">Hola, soy {profile.name}</h1>
+          <p className="lead text-secondary col-lg-7">{profile.tagline}</p>
+          <a className="btn btn-primary mt-2" href="#contacto">Contactame</a>
+        </section>
+
+        <section id="sobre-mi" className="py-4 border-top">
+          <h2 className="h4 mb-3">Sobre mí</h2>
+          <p className="col-lg-8">{profile.about}</p>
+          <div className="d-flex flex-wrap gap-2 mt-3">
+            {tecnologias.map((t) => (
+              <span key={t} className="badge text-bg-light border fw-normal">{t}</span>
+            ))}
+          </div>
+        </section>
+
+        <section id="contacto" className="py-4 border-top">
+          <h2 className="h4 mb-3">Contacto</h2>
+          <p className="mb-1">
+            Escribime a <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          </p>
+          <p className="text-secondary small">Próximamente: proyectos y más secciones.</p>
+        </section>
+      </main>
+
+      <footer className="border-top py-3 mt-4">
+        <div className="container small text-secondary">
+          © {new Date().getFullYear()} {profile.name}
+        </div>
+      </footer>
+    </>
   );
 }

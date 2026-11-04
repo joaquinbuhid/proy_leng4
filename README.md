@@ -1,12 +1,10 @@
 # Portfolio Fullstack · Lenguajes 4
 
-Frontend (maqueta visual) del Trabajo Práctico Integrador: portfolio de un desarrollador fullstack con sitio público, registro, proyectos/demos y panel de gestión.
+Landing inicial del portfolio de un desarrollador fullstack (Trabajo Práctico Integrador).
 
 ## Tecnologías
-- React 18 (Create React App) + React Router (HashRouter, compatible con GitHub Pages)
-- Bootstrap 5 + Bootstrap Icons (framework CSS)
-- GSAP + ScrollTrigger (animaciones)
-- Chart.js + react-chartjs-2 (gráficos)
+- React 18 (Create React App)
+- Bootstrap 5
 
 ## Cómo correrlo
 ```bash
@@ -15,15 +13,5 @@ npm start        # http://localhost:3000
 npm run build    # genera /build para desplegar
 ```
 
-## Pantallas
-| Ruta | Descripción |
-|---|---|
-| `#/` | Inicio: hero, sobre mí, stack, servicios, experiencia |
-| `#/contacto` | Formulario de contacto (consulta, cotización, asesoría) |
-| `#/proyectos` · `#/proyectos/:id` | Listado y detalle con demos interactivas |
-| `#/login` · `#/registro` | Ingreso y registro |
-| `#/estilo` | Guía de estilo (paleta, tipografía, componentes) |
-| `#/admin` | Panel: resumen, consultas, contenido (CRUD), usuarios, métricas |
-
 ## Estado
-Solo frontend. Los datos son de ejemplo (`src/data/mock.js`) y los formularios validan pero no envían a ningún servidor. El perfil se edita en `src/data/profile.js`.
+Por ahora es una sola página con presentación, "Sobre mí" y contacto. Los datos del perfil se editan en `src/data/profile.js`.
